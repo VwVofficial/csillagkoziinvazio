@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Csillagközi Invázió</title>
+		<script src="./src/main.ts" defer async type="module"></script>
+	</head>
+	<body>
+		<noscript>
+			<p>
+				A játék megfelelő működéséghez egy modern böngésző kell
+				Javascripttel
+			</p>
+			<p>要玩这个游戏，你需要一个现代的网络浏览器和 javascript</p>
+		</noscript>
+		<h1>Csillagközi Invázió</h1>
+		<h2>(空间侵略)</h2>
+		<div id="app" class="hidden"></div>
+		<center>
+			<div id="start">
+				<p>Lődd le az összes ellenfelet, van három életed!</p>
+				<button id="btn_start">Játék indítása</button>
+			</div>
+			<div id="lose" class="hidden">
+				<p>Nem sikerült az kúldetés!</p>
+				<button onclick="window.location.reload(true)">
+					üjrapróbálkozás
+				</button>
+			</div>
+			<div id="win" class="hidden">
+				<p>Sikerült, megvédte a földet!</p>
+				<button onclick="window.location.reload(true)">
+					Újrajátszás
+				</button>
+			</div>
+		</center>
+	</body>
+</html>

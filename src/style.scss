@@ -1,0 +1,24 @@
+@import '@fontsource/iosevka';
+
+:root {
+	color: #eceff4;
+	font-family: 'Iosevka', monospace, sans-serif;
+}
+
+h1,
+h2 {
+	text-align: center;
+}
+
+body {
+	background-color: #3b4252;
+}
+
+#app {
+	margin: 1rem auto;
+	width: max-content;
+}
+
+.hidden {
+	display: none;
+}
