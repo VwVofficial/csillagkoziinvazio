@@ -14,6 +14,17 @@ body {
 	background-color: #3b4252;
 }
 
+button {
+	background-color: #2e3440;
+	color: inherit;
+	font-family: inherit;
+	margin: 1rem;
+	padding: 0.5rem;
+	border: none;
+	display: block;
+	font-size: 1rem;
+}
+
 #app {
 	margin: 1rem auto;
 	width: max-content;
