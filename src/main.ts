@@ -103,9 +103,11 @@ const sketch = (s: p5) => {
 
 		if (s.keyIsDown(s.LEFT_ARROW) || s.keyIsDown(65)) {
 			player_pos -= player_speed * dt;
+			if (player_pos < 5) player_pos = 5;
 		}
 		if (s.keyIsDown(s.RIGHT_ARROW) || s.keyIsDown(68)) {
 			player_pos += player_speed * dt;
+			if (player_pos > width - 5) player_pos = width - 5;
 		}
 
 		if (player_projectile) {
