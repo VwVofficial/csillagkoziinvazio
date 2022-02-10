@@ -79,6 +79,11 @@ const sketch = (s: p5) => {
 		s.fill('#eceff4');
 		s.rectMode(s.RADIUS);
 		s.rect(player_pos, player_y, 10, 10);
+
+		for (let i = enemy_projectiles.length - 1; i >= 0; i--)
+			if (enemy_projectiles[i].y > height + 5)
+				enemy_projectiles.splice(i, 1);
+
 		s.fill('#d08770');
 		for (let i = enemy_projectiles.length - 1; i >= 0; i--) {
 			enemy_projectiles[i].y += projectile_speed * dt;
