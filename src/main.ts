@@ -20,7 +20,6 @@ type projectile = { x: number; y: number };
 let enemies: { x: number; y: number }[] = [];
 let enemies_distance = 0;
 let enemies_direction = 1;
-let level_counter = 0;
 let hp_couner = 3;
 let player_pos = width / 2;
 let enemy_timer = null;
