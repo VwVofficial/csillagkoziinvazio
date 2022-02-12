@@ -57,7 +57,7 @@ export class Canvas {
 
 	#keydown(e: KeyboardEvent) {
 		this.#keys[e.code] = true;
-		this.keyPressed(e);
+		if (this.running) this.keyPressed(e);
 	}
 	#keyup(e: KeyboardEvent) {
 		this.#keys[e.code] = false;
