@@ -12,8 +12,5 @@
 		"sass": "^1.49.7",
 		"vite": "^2.7.13",
 		"vite-plugin-html": "^3.0.3"
-	},
-	"dependencies": {
-		"@fontsource/iosevka": "^4.5.2"
 	}
 }
