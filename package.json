@@ -9,7 +9,6 @@
 		"dev": "vite"
 	},
 	"devDependencies": {
-		"sass": "^1.49.7",
 		"vite": "^2.7.13",
 		"vite-plugin-html": "^3.0.3"
 	}

@@ -1,5 +1,5 @@
 import { Canvas } from './canvas';
-import './style.scss';
+import './style.css';
 import { distance_sq } from './utils';
 
 const appCanvas = <HTMLCanvasElement>document.getElementById('app');
