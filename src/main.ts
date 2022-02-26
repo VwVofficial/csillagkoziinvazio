@@ -104,11 +104,11 @@ s.draw = (deltaTime) => {
 
 	if (s.isKeyDown('ArrowLeft') || s.isKeyDown('KeyA')) {
 		player_pos -= player_speed * dt;
-		if (player_pos < 5) player_pos = 5;
+		if (player_pos < 10) player_pos = 10;
 	}
 	if (s.isKeyDown('ArrowRight') || s.isKeyDown('KeyD')) {
 		player_pos += player_speed * dt;
-		if (player_pos > width - 5) player_pos = width - 5;
+		if (player_pos > width - 10) player_pos = width - 10;
 	}
 
 	if (player_projectile) {
