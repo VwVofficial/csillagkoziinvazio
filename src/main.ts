@@ -20,7 +20,7 @@ type projectile = { x: number; y: number };
 let enemies: { x: number; y: number }[] = [];
 let enemies_distance = 0;
 let enemies_direction = 1;
-let hp_couner = 3;
+let hp_counter = 3;
 let player_pos = width / 2;
 let enemy_timer = null;
 
@@ -90,8 +90,8 @@ s.draw = (deltaTime) => {
 
 		if (distance_sq(player_pos, player_y, p.x, p.y) < 15 ** 2) {
 			enemy_projectiles.splice(enemy_projectiles_index, 1);
-			hp_couner--;
-			if (hp_couner < 1) lose();
+			hp_counter--;
+			if (hp_counter < 1) lose();
 			continue;
 		}
 		s.rect(p.x, p.y, 5, 5);
@@ -103,7 +103,7 @@ s.draw = (deltaTime) => {
 		draw_enemy(s, e);
 	});
 
-	for (let i = 0; i < hp_couner; i++) {
+	for (let i = 0; i < hp_counter; i++) {
 		s.fill('#b48ead');
 		s.rect(20 * (i + 1), 20, 7, 7);
 	}
