@@ -77,26 +77,32 @@ s.draw = (deltaTime) => {
 	s.fill('#eceff4');
 	s.rect(player_pos, player_y, 10, 10);
 
-	for (let i = enemy_projectiles.length - 1; i >= 0; i--)
-		if (enemy_projectiles[i].y > height + 5) enemy_projectiles.splice(i, 1);
-
 	s.fill('#d08770');
-	for (let i = enemy_projectiles.length - 1; i >= 0; i--) {
-		enemy_projectiles[i].y += projectile_speed * dt;
-		const p = enemy_projectiles[i];
+	let enemy_projectiles_index = enemy_projectiles.length;
+	while (enemy_projectiles_index--) {
+		enemy_projectiles[enemy_projectiles_index].y += projectile_speed * dt;
+		const p = enemy_projectiles[enemy_projectiles_index];
+
+		if (p.y > height + 5) {
+			enemy_projectiles.splice(enemy_projectiles_index, 1);
+			continue;
+		}
+
 		if (distance_sq(player_pos, player_y, p.x, p.y) < 15 ** 2) {
-			enemy_projectiles.splice(i, 1);
+			enemy_projectiles.splice(enemy_projectiles_index, 1);
 			hp_couner--;
 			if (hp_couner < 1) lose();
 			continue;
 		}
 		s.rect(p.x, p.y, 5, 5);
 	}
+
 	enemies.forEach((e) => {
 		if (distance_sq(e.x, e.y, player_pos, player_y) < 20 ** 2) lose();
 		if (player_y <= e.y) lose();
 		draw_enemy(s, e);
 	});
+
 	for (let i = 0; i < hp_couner; i++) {
 		s.fill('#b48ead');
 		s.rect(20 * (i + 1), 20, 7, 7);
@@ -159,6 +165,7 @@ function win() {
 	win_dialog.className = '';
 	stop();
 }
+
 function lose() {
 	lose_dialog.className = '';
 	stop();
